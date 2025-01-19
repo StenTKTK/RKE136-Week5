@@ -32,24 +32,23 @@
         <h2 class="movie-info-overview-title">Overview</h2>
         <p class="movie-info-overview">A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
 
+        <!-- Image Carousel -->
+        <div class="carousel-container">
+          <button class="carousel-prev" id="prevBtn">&#10094;</button>
+          <div class="carousel-images">
+            <img src="images/pic.jpg" alt="Movie Poster 1" class="carousel-img">
+            <img src="images/pic1.jpg" alt="Movie Poster 2" class="carousel-img">
+            <img src="images/pic2.jpg" alt="Movie Poster 3" class="carousel-img">
+          </div>
+          <button class="carousel-next" id="nextBtn">&#10095;</button>
+        </div>
+
         <div class="movie-info-actions">
           <ul>
             <li><a href="#" class="add-fav"><i class="fas fa-heart"></i></a></li>
             <li><a href="#" class="add-bookmark"><i class="fas fa-bookmark"></i></a></li>
             <li><a href="#" class="rate-movie"><i class="fas fa-star-half-alt"></i></a></li>
           </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal (Hidden by default) -->
-    <div id="movieModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <!-- Image inside the modal -->
-        <div class="modal-image-container">
-          <img src="images/freeGuy.jpg" alt="Modal Image" class="modal-image">
-          <p class="modal-image-title">Free Guy (2021)</p>
         </div>
       </div>
     </div>
@@ -61,40 +60,11 @@
           <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram social-icon"></i> Instagram</a></li>
           <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f social-icon"></i> Facebook</a></li>
       </ul>
-      <p>&copy; Sten 2025</p>
+      <p>&copy; Sten 2025</p> <!-- Copyright Text -->
     </footer>
 
   </div>
 
-  <script>
-    // Get the modal
-    var modal = document.getElementById("movieModal");
-
-    // Get the image and insert it inside the modal
-    var img = document.getElementById("moviePoster");
-    var modalImg = document.querySelector(".modal-image");
-    var modalTitle = document.querySelector(".modal-image-title");
-    img.onclick = function() {
-      modal.style.display = "block";
-      modalImg.src = this.src;
-      modalTitle.textContent = "Free Guy (2021)";
-    }
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span>, close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    // Close the modal when clicking outside of it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
-
+  <script src="app.js"></script> <!-- External JS file -->
 </body>
 </html>

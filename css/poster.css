@@ -18,7 +18,6 @@ html {
 
 .movie-card {
   margin-top: 5rem; /* 5rem margin from top */
-  height: 800px;
   text-align: center;
 }
 
@@ -44,88 +43,78 @@ html {
     from { transform: scale(0.9); }
     to { transform: scale(1); }
 }
-  
-.movie-rating {
-  display: inline-block;
-  border: 1px solid #151515;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-  
-.movie-duration {
-  margin-left: 1rem;
-  letter-spacing: 0.2rem;
-}
-  
-.movie-duration:before {
-  content: "• "; /* Bullet point before duration */
-}
-  
-.movie-info-quote {
-  color: #151515a4;
-  font-style: italic;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-  
-.movie-info-overview-title {
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-}
-  
-.movie-info-actions {
-  font-size: 1.1rem;
-}
-  
-.movie-info-actions ul {
-  list-style: none;
+
+.carousel-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  position: relative;
+  margin-bottom: 2rem; /* Add space below the carousel to prevent overlap with content */
 }
-  
-.movie-info-actions ul li {
-  margin: 0 1rem;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: rgb(3, 37, 65);
-  transition: transform 0.3s ease-in-out;
-}
-  
-.movie-info-actions ul li:hover {
-  transform: scale(1.1);
-}
-  
-.movie-info-actions ul li a {
-  text-decoration: none;
+
+.carousel-prev, .carousel-next {
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
+  border: none;
   padding: 1rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
-  
+
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-images {
+  display: flex;
+  overflow: hidden;
+  width: 80%; /* Adjust width to control overall carousel size */
+  position: relative;
+  margin: 0 auto;
+  justify-content: center; /* Ensure images are centered in the container */
+}
+
+.carousel-img {
+  width: 100%;
+  max-width: 400px; /* Slightly larger images */
+  height: auto; /* Maintain aspect ratio */
+  display: none; /* Hide images by default */
+  border-radius: 10px;
+  margin: 0 15px; /* Add space between images */
+}
+
 footer {
   margin-top: 2rem;
   text-align: center;
   color: #777;
 }
-  
+
 footer a {
   font-size: 1.5rem;
   text-transform: uppercase;
   text-decoration: none;
   color: #333; /* A darker shade for better contrast */
 }
-  
+
 footer ul {
   list-style: none;
   display: flex;
   justify-content: center;
 }
-  
+
 footer ul li {
   margin: 0 1rem;
 }
@@ -181,4 +170,39 @@ footer ul li {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Styling for movie-info-actions - adding hover effects and layout */
+.movie-info-actions ul {
+  list-style: none;
+  display: flex; /* Kõrvale paigutamiseks */
+  justify-content: center; /* Keskendada neid horisontaalselt */
+  gap: 1rem; /* Lisab vahe iga ikooni vahele */
+}
+
+.movie-info-actions ul li {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #151515; /* Algne värv */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Animatsioon efekti jaoks */
+}
+
+.movie-info-actions ul li:hover {
+  transform: scale(1.2); /* Suurendab suurust hoveri ajal */
+  background-color: #ff6347; /* Muudab tausta värvi hoveri ajal (nt tomatpunaseks) */
+}
+
+.movie-info-actions ul li a {
+  color: white; /* Ikoonide värv */
+  font-size: 1.5rem; /* Ikoonide suurus */
+  text-decoration: none; /* Eemaldab lingi allajoone */
+  cursor: pointer;
+}
+
+.movie-info-actions ul li:hover a {
+  color: #fff; /* Kindel värv hoveri ajal */
 }
