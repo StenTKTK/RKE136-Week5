@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/poster.css">
+  <!-- FontAwesome CDN for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <title>Task</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="movie-card">
+      <h2 class="movie-title">Free Guy (2021)</h2>
+      <p class="movie-genres">
+        <span class="movie-rating">PG-13</span>  
+        08/13/2021 (US) Comedy, Action, Adventure, Science Fiction 
+        <span class="movie-duration">1h 55m</span> 
+      </p>
+      
+      <!-- Image Clickable to Open Modal -->
+      <div class="movie-poster-container">
+        <img src="images/freeGuy.jpg" alt="Free Guy movie poster" id="moviePoster">
+      </div>
+
+      <div class="movie-info-container">
+        <p class="movie-info-quote">Life's too short to be a background character.</p>
+
+        <h2 class="movie-info-overview-title">Overview</h2>
+        <p class="movie-info-overview">A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.</p>
+
+        <div class="movie-info-actions">
+          <ul>
+            <li><a href="#" class="add-fav"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#" class="add-bookmark"><i class="fas fa-bookmark"></i></a></li>
+            <li><a href="#" class="rate-movie"><i class="fas fa-star-half-alt"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal (Hidden by default) -->
+    <div id="movieModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Image inside the modal -->
+        <div class="modal-image-container">
+          <img src="images/freeGuy.jpg" alt="Modal Image" class="modal-image">
+          <p class="modal-image-title">Free Guy (2021)</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <h3>Find me to discuss the movie</h3>
+      <ul>
+          <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter social-icon"></i> Twitter</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram social-icon"></i> Instagram</a></li>
+          <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f social-icon"></i> Facebook</a></li>
+      </ul>
+      <p>&copy; Sten 2025</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("movieModal");
+
+    // Get the image and insert it inside the modal
+    var img = document.getElementById("moviePoster");
+    var modalImg = document.querySelector(".modal-image");
+    var modalTitle = document.querySelector(".modal-image-title");
+    img.onclick = function() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      modalTitle.textContent = "Free Guy (2021)";
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span>, close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
